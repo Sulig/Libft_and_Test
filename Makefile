@@ -6,7 +6,7 @@
 #    By: sadoming <sadoming@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 16:14:42 by sadoming          #+#    #+#              #
-#    Updated: 2023/06/21 19:32:33 by sadoming         ###   ########.fr        #
+#    Updated: 2023/06/22 18:28:57 by sadoming         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,7 +78,7 @@ TOBJB = $(patsubst %.c, %.o, $(TESTBONUS)) $(TESTLIB)
 # Test:
 
 # make test.out:
-$(TEST): $(TOBJ) $(TOBJB) $(OBJ) $(OBJB)
+$(TEST): $(OBJ) $(OBJB) $(TOBJ) $(TOBJB)
 	@make
 	@norminette $(SRC) $(BONUS)
 	@gcc -o $(TEST) *.o
