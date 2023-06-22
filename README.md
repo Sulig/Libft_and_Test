@@ -12,4 +12,4 @@ make debug
 *To clean "needs revise"
 make clear
 
-~* Made by sadoming *~ My nickname on 42BCN! ;)
+~ Made by sadoming ~ My nickname on 42BCN! ;)
