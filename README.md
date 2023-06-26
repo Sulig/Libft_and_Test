@@ -1,7 +1,7 @@
 # Libft_and_Test
 
 Here's my tests for LIBFT!, these tests are basics and in some funcions are manual, but you can use it!
-Only you have to git clone the repo in your project and delete "LIBFT", to delete my project.
+Only you have to git clone the repo in your project and move the tests and the makefile in your project (Or move your files into the repo), to delete my project.
 
 *To run:
 make test
