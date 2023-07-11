@@ -6,15 +6,13 @@
 #    By: sadoming <sadoming@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 16:14:42 by sadoming          #+#    #+#              #
-#    Updated: 2023/07/11 16:22:03 by sadoming         ###   ########.fr        #
+#    Updated: 2023/07/11 17:04:06 by sadoming         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-### Need this 4 test ##
-NAME = libft.a
-
 CFLAGS = -Wall -Wextra -Werror
 
+# Sources:
 LIB = libft.h
 
 SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c\
@@ -30,32 +28,7 @@ OBJ = $(patsubst %.c, %.o, $(SRC)) $(LIB)
 OBJB = $(patsubst %.c, %.o, $(BONUS)) $(LIB)
 #------------------------------------------------------------------------------------------------#
 
-all: $(NAME)
-
-%.o : %.c
-	cc $(CFLAGS) -c -o $@ $< 
-
-$(NAME): ${OBJ}
-	ar rc $(NAME) $(OBJ)
-
-bonus: ${OBJB}
-	ar rc $(NAME) $(OBJB)
-
-clean:
-	/bin/rm -f *.o
-
-fclean: clean
-	/bin/rm -f $(NAME)
-
-re: fclean all
-
-rebonus: fclean bonus
-
-# ********************************************************************************************** #
-
 ### Region 4 test files 4 Libft ###
-
-# Variables:
 TEST = test.out
 
 TESTLIB = test_libft.h
@@ -74,7 +47,16 @@ TESTBONUS = test_lstnew.c test_lstsize.c test_lstadd_front.c test_lstlast.c test
 TOBJ = $(patsubst %.c, %.o, $(TESTSRC)) $(TESTLIB)
 TOBJB = $(patsubst %.c, %.o, $(TESTBONUS)) $(TESTLIB)
 #------------------------------------------------------------------------------#
-# Test:
+
+auto:
+	@mv $(TESTLIB) ./..
+	@mv $(TESTSRC) ./..
+	@mv $(TESTBONUS) ./..
+	@mv -i Makefile ./..
+	@echo "The test files are moved successfuly!"
+
+%.o : %.c
+	cc $(CFLAGS) -c -o $@ $<
 
 # make test.out:
 $(TEST): $(OBJ) $(OBJB) $(TOBJ) $(TOBJB)
@@ -101,9 +83,25 @@ debug: $(DEB)
 
 # ************************************************************************************************ #
 
-clear: fclean
+clear:
+	/bin/rm -f *.o
+	/bin/rm -f $(NAME)
 	/bin/rm -f $(TEST)
 	/bin/rm -f $(DEB)
 	@clear
+
+re: clear
+
+# DANGEROUS ZONE! # -> |
+
+quit: clear
+	/bin/rm -i $(TESTLIB)
+	/bin/rm -i $(TESTSRC)
+	/bin/rm -i $(TESTBONUS)
+	@clear
+
+# ||||||||||||||||||||||
+# -------------------- #
+.PHONY: test debug clear re quit
 
 # ************************************************************************************************ #
