@@ -6,7 +6,7 @@
 #    By: sadoming <sadoming@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 16:14:42 by sadoming          #+#    #+#              #
-#    Updated: 2023/06/22 18:28:57 by sadoming         ###   ########.fr        #
+#    Updated: 2023/07/11 16:22:03 by sadoming         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,6 @@ $(NAME): ${OBJ}
 bonus: ${OBJB}
 	ar rc $(NAME) $(OBJB)
 
-.PHONY: clean
 clean:
 	/bin/rm -f *.o
 
@@ -79,24 +78,13 @@ TOBJB = $(patsubst %.c, %.o, $(TESTBONUS)) $(TESTLIB)
 
 # make test.out:
 $(TEST): $(OBJ) $(OBJB) $(TOBJ) $(TOBJB)
-	@make
 	@norminette $(SRC) $(BONUS)
 	@gcc -o $(TEST) *.o
 	@echo * "\n\n"
 
 # ./test.out:
 test: $(TEST)
-	@./$(TEST)
 	@leaks -atExit -- ./$(TEST)
-
-.PHONY: remove
-remove:
-	/bin/rm -f $(TEST)
-
-.PHONY: clear
-clear:
-	@make remove
-	@make fclean
 
 # ************************************************************************************************ #
 
@@ -106,12 +94,16 @@ DEBB = $(SRC) $(BONUS) $(TESTSRC) $(TESTBONUS)
 
 $(DEB): $(DEBB)
 	@gcc -g $(DEBB) -o $(DEB)
-	@echo Compiled! make debug to run lldb!
+	@lldb is ready
 
 debug: $(DEB)
 	@lldb $(DEB)
 
-rmd:
+# ************************************************************************************************ #
+
+clear: fclean
+	/bin/rm -f $(TEST)
 	/bin/rm -f $(DEB)
+	@clear
 
 # ************************************************************************************************ #
