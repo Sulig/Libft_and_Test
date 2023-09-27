@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-LB = Libft #Change this directory
+DIR = Libft #Change this directory
 TDIR = Tests
 # ------------------------------^
 TEST = test.out
@@ -29,7 +29,7 @@ all:
 # Compiling Region:
 $(NM):
 	@echo "\033[1;93m * Compiling Libft -->\033[1;97m\n"
-	@make -C $(LB)
+	@make -C $(DIR)
 
 $(TN):
 	@echo "\033[1;93m * Compiling Tests -->\033[1;97m\n"
@@ -42,7 +42,7 @@ $(TEST): $(NM) $(TN)
 
 norminette:
 	@echo "\n\033[1;93m~ Norminette:"
-	@norminette $(LB)
+	@norminette $(DIR)
 	@echo "\033[1;32m ~ Norminette OK\n"
 
 test: $(TEST)
@@ -65,13 +65,13 @@ valgrind: $(DEB)
 # ********************************************************************************* #
 # Clean region
 clean:
-	@make clean -C $(LB)
+	@make clean -C $(DIR)
 	@make clean -C $(TDIR)
 	@/bin/rm -f $(TEST)
 	@/bin/rm -f $(DEB)
 
 fclean : clean
-	@make fclean -C $(LB)
+	@make fclean -C $(DIR)
 	@make fclean -C $(TDIR)
 	@/bin/rm -frd test.out.dSYM
 	@/bin/rm -frd debug.out.dSYM
