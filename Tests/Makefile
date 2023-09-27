@@ -6,7 +6,7 @@
 #    By: sadoming <sadoming@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/06 19:55:18 by sadoming          #+#    #+#              #
-#    Updated: 2023/09/27 13:24:25 by sadoming         ###   ########.fr        #
+#    Updated: 2023/09/27 18:23:26 by sadoming         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,7 @@ bonus: $(OBJB)
 
 clean:
 	@/bin/rm -f *.o
+	@/bin/rm -f $(DIR)/*.o
 
 fclean : clean
 	@/bin/rm -f $(NAME)
