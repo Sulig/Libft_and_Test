@@ -6,7 +6,7 @@
 #    By: sadoming <sadoming@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 16:14:42 by sadoming          #+#    #+#              #
-#    Updated: 2023/09/27 13:04:51 by sadoming         ###   ########.fr        #
+#    Updated: 2023/09/27 13:12:54 by sadoming         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,8 @@ all:
 	@make norminette
 	@make test
 
+#-------------------------------------------------------------#
+# Compiling Region:
 $(NM):
 	@echo "\033[1;93m * Compiling Libft -->\033[1;97m\n"
 	@make -C $(LB)
@@ -32,7 +34,7 @@ $(NM):
 $(TN):
 	@echo "\033[1;93m * Compiling Tests -->\033[1;97m\n"
 	@make -C $(TDIR)
-
+#-------------------------------------------------------------#
 # Test region:
 $(TEST): $(NM) $(TN)
 	@gcc -o $(TEST) $(NM) $(TN)
