@@ -47,6 +47,7 @@ clean:
 
 fclean : clean
 	@/bin/rm -f $(NAME)
+	@/bin/rm -f .DS_Store
 
 re: fclean all
 
