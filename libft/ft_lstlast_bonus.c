@@ -6,7 +6,7 @@
 /*   By: sadoming <sadoming@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 16:44:45 by sadoming          #+#    #+#             */
-/*   Updated: 2023/08/21 16:45:02 by sadoming         ###   ########.fr       */
+/*   Updated: 2023/09/18 19:20:22 by sadoming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ t_list	*ft_lstlast(t_list *lst)
 	if (!lst)
 		return (0);
 	while (lst->next)
-	{
 		lst = lst->next;
-	}
 	return (lst);
 }

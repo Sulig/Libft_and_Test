@@ -5,29 +5,31 @@
 #                                                     +:+ +:+         +:+      #
 #    By: sadoming <sadoming@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/05/02 16:14:42 by sadoming          #+#    #+#              #
-#    Updated: 2023/07/10 16:50:35 by sadoming         ###   ########.fr        #
+#    Created: 2023/09/06 19:55:18 by sadoming          #+#    #+#              #
+#    Updated: 2023/09/06 19:59:50 by sadoming         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+NAME = test_libft.a
 CFLAGS = -Wall -Wextra -Werror
 
 MAK = Makefile
-LIB = libft.h
+LIB = test_libft.h
 
-SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c\
-	  ft_isprint.c ft_itoa.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c\
-	  ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c ft_split.c ft_strchr.c\
-	  ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c\
-	  ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c
+SRC = test_libft_main.c test_myapp_str.c test_lstcnt_tn.c test_isalnum.c test_isalpha.c\
+		  test_isascii.c test_isdigit.c test_isprint.c test_toupper.c test_tolower.c test_strlen.c\
+		  test_bzero.c test_strlcpy.c test_strchr.c test_strrchr.c test_strncmp.c test_strlcat.c\
+		  test_strnstr.c test_atoi.c test_strdup.c test_memset.c test_memcpy.c test_memchr.c\
+		  test_memcmp.c  test_memmove.c test_substr.c test_strjoin.c test_strtrim.c test_split.c\
+		  test_itoa.c test_strmapi.c test_striteri.c test_putchar_fd.c test_putstr_fd.c\
+		  test_putendl_fd.c test_putnbr_fd.c
 
-BONUS = ft_lstadd_back_bonus.c ft_lstclear_bonus.c ft_lstdelone_bonus.c ft_lstadd_front_bonus.c\
-	ft_lstiter_bonus.c ft_lstlast_bonus.c ft_lstmap_bonus.c ft_lstnew_bonus.c ft_lstsize_bonus.c
+BONUS = test_lstnew.c test_lstsize.c test_lstadd_front.c test_lstlast.c test_lstadd_back.c\
+			test_lstdelone.c test_lstclear.c test_lstiter.c test_lstmap.c
 
 OBJ = $(patsubst %.c, %.o, $(SRC))
 OBJB = $(patsubst %.c, %.o, $(BONUS))
-# ********************************************* #
+#------------------------------------------------------------------------------#
 
 all: $(NAME) bonus
 
@@ -36,11 +38,11 @@ all: $(NAME) bonus
 
 $(NAME): $(OBJ)
 	@ar rc $(NAME) $(OBJ)
-	@echo "\033[1;32m Libft Compiled Successfully\033[1;97m\n"
+	@echo "\033[1;32m Tests Compiled Successfully\033[1;97m\n"
 
 bonus: $(OBJB)
 	@ar rc $(NAME) $(OBJB)
-	@echo "\033[1;32m Libft bonus Compiled Successfully\033[1;97m\n"
+	@echo "\033[1;32m Tests for bonus Compiled Successfully\033[1;97m\n"
 
 clean:
 	@/bin/rm -f *.o

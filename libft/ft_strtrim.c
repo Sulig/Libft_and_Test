@@ -6,7 +6,7 @@
 /*   By: sadoming <sadoming@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 20:16:49 by sadoming          #+#    #+#             */
-/*   Updated: 2023/08/21 17:12:50 by sadoming         ###   ########.fr       */
+/*   Updated: 2023/09/27 13:03:57 by sadoming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 	size_t	cnt;
 
 	if (s1[0] == '\0')
-		return (ft_dup("", 0));
+	  return (ft_dup("", 0));
 	if (set[0] == '\0')
 		return (ft_dup((char *)s1, 1000));
 	ln = 0;
