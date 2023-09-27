@@ -8,22 +8,30 @@ Resumen: Este proyecto consiste en programar una librería en C.  Tu librería t
 - Carpeta donde se guardan los resultados de Put *En proceso*
 - Subject
 
-## !! Importante Antes de ejecutar 'make'!!
-1. En el Makefile cambia la variable "DIR" por el directorio de tu get_next_line
-2. En el archivo "test_getnextline.h", cambia el directorio donde esta incluido tu "get_next_line.h"
+## !Importante!
+Para usar los tests, necesitaras un Makefile en tu directorio de libft, que contenga como minimo:
+  - La regla $(NAME)
+  - La regla clean
+  - La regla fclean
+
+### Antes de ejecutar 'make'!!
+1. En el Makefile cambia las variables donde pone *Change this directory* por el directorio de tu libft y por donde se ubica tu printf.a
+2. En el archivo "test_libft.h", cambia el directorio donde esta incluido tu "libft.h"
 3. Guarda todo y ya esta listo para usar!
 ***
 ## Comandos:
-### Tests:
-
-Auto Test
-
-    make test
-
-Test Manual
+### All
+Compila todo lo necesario y ejecuta la norminette y los tests
 
     make
-    ./test.out + Directorio/Archivo.txt
+
+### Norminette
+
+    make norminette
+
+### Tests
+
+    make test
 
 ### Debuggeador:
 
@@ -49,3 +57,4 @@ Igual que fclean + limpia la pantalla
 
 ***
 ~ Made by sadoming ~
+***
