@@ -1,10 +1,12 @@
 # Libft_and_Test
-Resumen: El objetivo de este proyecto es simple: programar una función que devuelva una línea leída de un file descriptor.
+Resumen: Este proyecto consiste en programar una librería en C.  Tu librería tendrá un montón de funciones de propósito general en las que se apoyarán tus programas.
 
 ## Contenido del repositorio:
-- Get Next Line + Bonus
-- Tests basicos + test manual *(Bonus no incluidos!)
-- Carpeta de los archivos para testear
+- Libft + Bonus
+- Tests basicos *(Se estan cambiando algunos tests)* + test para los bonus
+- GetNextLine *Solo como ayuda en los tests de Put*
+- Carpeta donde se guardan los resultados de Put *En proceso*
+- Subject
 
 ## !! Importante Antes de ejecutar 'make'!!
 1. En el Makefile cambia la variable "DIR" por el directorio de tu get_next_line
