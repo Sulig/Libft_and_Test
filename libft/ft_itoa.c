@@ -62,7 +62,7 @@ char	*ft_itoa(int n)
 		cnt++;
 	}
 	cnt += ft_numcnt(num);
-	str = ft_calloc(cnt + 1, 1);
+	str = ft_calloc(sizeof(char), cnt + 1);
 	if (str == 0)
 		return (0);
 	ft_putnbr(num, str, cnt -1);
